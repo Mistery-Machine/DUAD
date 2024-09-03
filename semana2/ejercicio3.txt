@@ -1,0 +1,15 @@
+1. inicio
+2. Definir `numero`
+3. Definir `contador`
+4. Definir `suma`
+5. Mostrar “Ingrese un numero”
+6. Pedir `numero`
+7. contador = 1
+8. suma=0
+9. Mientras que (`contador` ≤ `numero`) hacer
+10. `suma` = `suma`+ `contador`
+11. `contador` +1
+12. FinMientras
+13. Mostrar “La suma del numero es”
+14. Mostrar `suma`
+15. fin

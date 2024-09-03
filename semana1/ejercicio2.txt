@@ -1,0 +1,34 @@
+# Rutina Diaria
+
+1. Despertarme:
+a. Abro los ojos y me levanto de la cama.
+b. Me dirijo al bano
+2. Lavarme los dientes:
+a. Me cepillo los dientes con pasta dental y enjuago con agua.
+b. Mientras dientes esten sucios
+b.1 Cepillar dientes con pasta dental
+3. Sentarme en la mesa a trabajar:
+a. Me siento en mi escritorio o mesa de trabajo.
+b. Enciendo mi computadora y comienzo a trabajar.
+4. Almorzar:
+a. A las 12 del dia preparo, cocino o compro algo para almorzar
+b. Si hay comida en la casa y esta cocinada
+1 Almuerzo
+c. Si hay comida en la casa y no esta cocinada
+1 Cocino comida
+2 Almuerzo
+d. Si no hay comida
+1 Compro comida
+2 Almuerzo
+5. Salir del trabajo:
+a. Finalizo mis tareas laborales.
+b. Apago mi computadora y me levanto de la mesa.
+6. Bañarme:
+a. Me dirijo al baño.
+b. Me ducho con agua y jabón
+c. Salgo y me seco con una toalla.
+    1. Mientras este mojado, seco con una toalla
+7. Ir a la cama a dormir:
+a. Me cambio a ropa cómoda para dormir.
+b. Me acuesto en la cama y cierro los ojos para descansar.
+8. Fin

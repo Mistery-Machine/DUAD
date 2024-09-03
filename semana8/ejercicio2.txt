@@ -1,0 +1,18 @@
+| **Método** | **Descripción** |
+| --- | --- |
+| close() | Cierra el archivo  |
+| detach() | Devuelve el flujo de datos sin procesar del bufer  |
+| fileno() | Devuelve un numero que idnetifica el flujo de datos para el sistema opearativo   |
+| flush() | Despeja la memoria interna  |
+| isatty() | Indica si el flujo es interactivo o no  |
+| read() | Devuelve el contenido del archivo  |
+| readable() | Indica si el archivo puede ser leido |
+| readline() | Devuelve el contenido de una linea del archivo |
+| readlines() | Devuelve una lista de lineas de un archivo  |
+| seek() | Cambia la posicion de un archivo  |
+| seekable() | Indica si el archivo se puede cambiar de posicion  |
+| tell() | Indica la posicion actual del archivo  |
+| truncate() | Ajusta el archivo a n tamano especifico |
+| writable() | Indica si se puede escribir en el archivo  |
+| write() | Escribe un string especifico en el archivo  |
+| writelines() | Escribe una lista de strings en un archivo  |

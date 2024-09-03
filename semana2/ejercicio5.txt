@@ -1,0 +1,13 @@
+1. Inicio
+2. Definir `velocidad`
+3. Definir `resultado_distancia`
+4. Definir `hora_segundos`
+5. Definir `resultado_conversion`
+6. Mostrar “Ingrese la velocidad en Km/h”
+7. Pedir `velocidad`
+8. `resultado_distancia` = `velocidad` * 1000
+9. `hora_segundos` = 3600
+10. `resultado_conversion` = `resultado_distancia` / `hora_segundos`
+11. Mostrar “La conversion es de”
+12. Mostrar `resultado_conversion`
+13. FIn

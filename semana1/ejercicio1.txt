@@ -1,0 +1,30 @@
+# Ver video en youtube
+
+ Buscar disposito
+a Si tiene celular, agarre su celular
+b sino, busque una tablet y agarre la tablet
+c sino, busque una computadora y agarre la computadora
+d sino, pidale un dispositivo a alguien mas
+
+2 Abrir aplicacion
+a Si tiene celular o tablet, busque la aplicacion "Youtube"
+b Sino, en la computadora haga los siguientes pasos
+b.1 Busque un navegador en la computadora
+b.2 En el navegador ingrese la siguiente URL: "[www.youtube.com](http://www.youtube.com/)"
+b.3 Presione la tecla ENTER
+
+3 Buscar video en barra de busqueda
+a Ya sea en la aplicacion o en la pagina web, ingrese el nombre 	del video o tema que desea ver en la barra de busqueda
+
+4 Reproducir video
+a Identifique el video que desea ver
+b Seleccione el video que quiere reproducir
+b.1 Si esta usando computadora dele click presionando el boton 	 izquierdo del mouse
+b.2 Sino, dele tap en la pantalla del smartphone al video que 	 	 quiere reproducir
+
+5 Cerrar aplicacion cuando finalizo video
+a Al finalizar el video, si quiere repetirlo, seleccione la 	flecha giratoria
+b Sino, escoja otro video
+c Sino, cierre la aplicacion
+
+6. Fin

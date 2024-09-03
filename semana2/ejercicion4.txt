@@ -1,0 +1,16 @@
+1. Inicio
+2. Definir `primero`
+3. Definir `segundo` 
+4. Mostrar “Ingrese el primer numero”
+5. Pedir `primero`
+6. Mostrar “Ingrese el segundo numero”
+7. Pedir `segundo`
+8. Si (primero > segundo)
+    1. Mostrar “El numero mayor es”
+    2. Mostrar `primero`
+9. Sino
+    1. Mostrar “El numero mayor es”
+    2. Mostrar `segundo`
+10. FinSi
+
+FIn
