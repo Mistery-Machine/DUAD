@@ -1,0 +1,15 @@
+1. Definir `precio_producto`
+2. Definir `descuento`
+3. Definir `precio_final`
+4. Mostrar “Ingrese el precio del producto”
+5. Pedir `precio_producto`
+    1. Inicio
+6. Si (`precio_producto` ≥ 100)
+    1. `descuento` = `precio_producto`* 0.10
+7. Sino
+    1. `descuento` = `precio_producto*`0.02
+8. Finsi
+9. `precio_final` = `precio_producto` - `descuento`
+10. Mostrar “El precio final es de”
+11. Mostrar precio_fina
+12. Fin

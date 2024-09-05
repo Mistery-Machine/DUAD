@@ -1,0 +1,14 @@
+1. Inicio
+2. Definir `tiempo_segundos`
+3. Definir `tiempo_completo` = 600
+4. Definir `tiempo_total`
+5. Mostrar “Ingrese tiempo en segundos”
+6. Pedir `tiempo_segundos`
+7. Si (`tiempo_segundos` > 600)
+    1. Mostrar “Mayor”
+8. Sino
+    1. `tiempo_total` = `tiempo_completo` - `tiempo_segundos`
+9. FinSi
+10. Mostrar “Cantidad de segundos faltantes para llegar a 10 min es de”
+11. Mostrar `tiempo_total`
+12. FIn
