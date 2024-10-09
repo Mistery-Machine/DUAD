@@ -5,9 +5,10 @@ import logic
 def export_data(students, averages, total_average, filename="csv_file.csv"):
   headers = ["Name", "Classroom", "Spanish", "English", "Soc Studies", "Science", "Average", "Total average"]
 
-  with open (filename, mode ="w", newline="") as file: 
+  with open (filename, mode ="a", newline="") as file: 
     writer = csv.writer(file)
-    writer.writerow(headers)
+    if file.tell()==0:
+      writer.writerow(headers)
 
     for student, avg in zip(students, averages):
       row = [
