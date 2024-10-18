@@ -34,18 +34,18 @@ def registering_students(n):
 
 
 def average_notes(students): 
-  averages={}
-  for student in students: 
-    name = student["name"]
-    grades = [
-      student["spanish_note"],
-      student["english_note"],
-      student["soc_studies_note"],
-      student["science_note"]
-      ]
-  average = sum(grades)/ len(grades)
-  averages[name]=average
-  return averages
+    averages = {}
+    for student in students: 
+        name = student["name"]
+        grades = [
+            student["spanish_note"],
+            student["english_note"],
+            student["soc_studies_note"],
+            student["science_note"]
+        ]
+        average = sum(grades) / len(grades)  
+        averages[name] = average  
+    return averages
 
 def calculate_top_three(averages):
 
@@ -59,7 +59,6 @@ def overall_average(averages):
   return total_average
 
 
-#Display functions 
 
 def display_students(students): 
   print("-- List of registered students --")
