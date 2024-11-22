@@ -1,0 +1,14 @@
+def checking_numbers(func): 
+  def wrapper (*args): 
+    for i in args: 
+      if type(i) != int: 
+        raise TypeError(f"You enter a {type(i)} which is not valid")
+    return func(*args)
+  return wrapper
+
+
+@checking_numbers  
+def confirm_numbers(a,b):
+  return a+b
+
+print(confirm_numbers(10,10))

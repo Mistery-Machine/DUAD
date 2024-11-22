@@ -1,0 +1,13 @@
+def show_parameters(func): 
+  def wrapper(*args): 
+    print(f"Los resultados son {args} ")
+    resultado = func(*args)
+    print(f"El resultado es {resultado}")
+    return resultado
+  return wrapper
+
+@show_parameters
+def obtain_parameter(a,b): 
+  return a*b 
+
+obtain_parameter(5,5)
