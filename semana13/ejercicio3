@@ -1,0 +1,31 @@
+from datetime import date
+
+class User:
+ def __init__(self, date_of_birth):
+  self.date_of_birth = date_of_birth
+
+ @property
+ def age(self):
+  today = date.today()
+  years = today.year - self.date_of_birth.year
+  if (today.month, today.day) < (self.date_of_birth.month, self.date_of_birth.day):
+   years -= 1
+  return years
+
+ def over_age(func):
+  def wrapper(user, *args, **kwargs):
+   if user.age < 18:
+    raise Exception("The user is under age.")
+   return func(user, *args, **kwargs)
+  return wrapper
+
+ @over_age
+ def verify_overage(self):
+  return "The user is legal."
+    
+
+user1 = User(date_of_birth=date(2000, 1, 1))  
+user2 = User(date_of_birth=date(2010, 1, 1))  
+
+print(user1.verify_overage())  
+print(user2.verify_overage())
