@@ -1,0 +1,49 @@
+class Node: 
+  def __init__(self, value):
+    self.value =value 
+    self.next = None 
+
+class Stack: 
+  def __init__(self):
+    self.top=None
+    self.size=0
+
+  def push (self, value): 
+    new_node=Node(value)
+    new_node.next=self.top
+    self.top=new_node
+    self.size+=1
+
+  def empty(self):
+    return self.top is None 
+
+  def pop(self):
+    if self.empty(): 
+      raise IndexError ("Stack is empty")
+    value_to_delete = self.top.value
+    self.top=self.top.next
+    self.size-=1
+    return value_to_delete 
+  
+  def print_stack(self):
+    if self.empty():
+      print("Stack is empty")
+    else: 
+      current_node=self.top
+      while current_node:
+        print(current_node.value)
+        current_node=current_node.next
+
+stack = Stack()
+stack.push(10)
+stack.push(20)
+stack.push(30)
+
+
+stack.print_stack() 
+stack.pop()
+stack.print_stack()  
+stack.pop()
+stack.print_stack()  
+stack.pop()
+stack.print_stack() 
