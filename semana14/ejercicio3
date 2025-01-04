@@ -1,0 +1,58 @@
+class Nodo:
+  def __init__(self, valor):
+    self.valor = valor
+    self.izquierdo = None
+    self.derecho = None
+
+class ArbolBinario:
+  def __init__(self):
+    self.raiz = None
+
+  def insertar(self, valor):
+    nuevo_nodo = Nodo(valor)
+    if self.raiz is None:
+      self.raiz = nuevo_nodo
+      return
+    actual = self.raiz
+    while True:
+      if valor < actual.valor:
+        if actual.izquierdo is None:
+          actual.izquierdo = nuevo_nodo
+          break
+        else:
+          actual = actual.izquierdo
+      else:
+        if actual.derecho is None:
+          actual.derecho = nuevo_nodo
+          break
+        else:
+          actual = actual.derecho
+
+  def imprimir_inorden(self):
+    actual = self.raiz
+    while actual:
+      if actual.izquierdo is None:
+        print(actual.valor, end=" ")
+        actual = actual.derecho
+      else:
+        predecesor = actual.izquierdo
+        while predecesor.derecho and predecesor.derecho is not actual:
+          predecesor = predecesor.derecho
+        if predecesor.derecho is None:
+          predecesor.derecho = actual
+          actual = actual.izquierdo
+        else:
+          predecesor.derecho = None
+          print(actual.valor, end=" ")
+          actual = actual.derecho
+
+
+arbol = ArbolBinario()
+
+arbol.insertar(10)
+arbol.insertar(5)
+arbol.insertar(15)
+arbol.insertar(3)
+arbol.insertar(7)
+
+arbol.imprimir_inorden()

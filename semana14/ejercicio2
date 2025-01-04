@@ -1,0 +1,54 @@
+class Node:
+  def __init__(self, value):
+    self.value = value
+    self.next = None
+    self.previous = None
+
+class Deque:
+  def __init__(self):
+    self.front = None
+    self.back = None
+
+  def is_empty(self):
+    return self.front is None and self.back is None
+
+  def insert_front(self, value):
+    new_node = Node(value)
+    if self.is_empty():
+      self.front = new_node
+      self.back = new_node
+    else:
+      new_node.next = self.front
+      self.front.previous = new_node
+      self.front = new_node
+
+  def insert_back(self, value):
+    new_node = Node(value)
+    if self.is_empty():
+      self.front = new_node
+      self.back = new_node
+    else:
+      new_node.previous = self.back
+      self.back.next = new_node
+      self.back = new_node
+
+  def print_queue(self):
+    if self.is_empty():
+      print("Queue is empty")
+    else:
+      current = self.front
+      while current:
+        print(current.value, end="<->")
+        current = current.next
+      print("None")
+
+
+deque = Deque()
+deque.insert_front("A")
+deque.insert_back("B")
+deque.insert_front("C")
+deque.insert_back("D")
+deque.insert_front("E")
+
+
+deque.print_queue()
