@@ -32,7 +32,7 @@ def test_bubble_sort_empty_list():
   bubble_sort(empty_list)
 
   #assert
-  empty_list==output_expected
+  assert empty_list==output_expected
 
 def test_bubble_sort_non_list(): 
   #arrange
