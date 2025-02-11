@@ -12,7 +12,8 @@ def test_function_sum_numbers_list():
 
   #assert
   assert  result== desire_ouput
-  
+
+def test_function_sum_numbers_empty_list():
   #second arrange
   number_input = []
   desire_ouput = 0
@@ -23,12 +24,16 @@ def test_function_sum_numbers_list():
   #assert
   assert result == desire_ouput
 
+def test_function_sum_numbers_negative_numbers_list():
   #third arrange 
   number_input = [-1,-2,-3,-4,-5]
   desire_ouput = -15
 
   #act
   result = suma_numeros(number_input)
+
+  #assert
+  assert result == desire_ouput
 
 def test_function_upper_lower_letter():
 
@@ -45,6 +50,7 @@ def test_function_upper_lower_letter():
   assert upper_count==desired_upper
   assert lower_count==desired_lower
 
+def test_function_all_lower_letter():
   # segundo arrange
   text="hola soy daniel"
   desired_upper=0
@@ -58,6 +64,7 @@ def test_function_upper_lower_letter():
   assert upper_count==desired_upper
   assert lower_count==desired_lower
 
+def test_function_all_capital_letter():
   #tercer arrange 
   text="HOLA SOY DANIEL"
   desired_upper=13
@@ -78,9 +85,10 @@ def test_function_print_string_backward():
   #act
   result= primera_funcion(text)
 
-  #arrange
+  #assert
   assert result==desired_text
 
+def test_function_print_empty_string():
   #segundo arrange
   text=""
   desired_text=""
@@ -91,6 +99,7 @@ def test_function_print_string_backward():
   #assert
   assert result == desired_text
 
+def test_function_print_one_letter():
   #tercer arrange
   text="A"
   desired_text="A"
