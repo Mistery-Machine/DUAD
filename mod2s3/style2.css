@@ -1,0 +1,99 @@
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+.container {
+  width: 80%;
+  max-width: 50rem;
+  margin: 1.25rem auto;
+  background-color: white;
+  padding: 1.25rem;
+}
+
+.title-container {
+  text-align: center;
+  margin-bottom: 0.625rem;
+}
+
+.title {
+  font-size: 2.5rem;
+}
+
+.subtitle-container {
+  text-align: center;
+  margin-bottom: 1.25rem;
+}
+
+.subtitle {
+  color: #666;
+}
+
+.author-container {
+  text-align: center;
+  margin-bottom: 1.25rem;
+}
+
+.author {
+  color: #888;
+}
+
+.image-container {
+  max-width: 100%;
+  margin-bottom: 1.25rem;
+}
+
+.main-image {
+  max-width: 100%;
+  height: auto;
+}
+
+.introduction-container {
+  align-items: flex-start;
+  margin-bottom: 1.25rem;
+  overflow: hidden;
+}
+
+.introduction {
+  text-align: justify;
+  line-height: 1.6;
+  flex: 1;
+}
+
+.paragraph {
+  text-align: justify;
+}
+
+.ad {
+  width: 30%;
+  padding: 20px;
+  margin-left: 20px;
+  margin-right: 0px;
+  background-color: #ffe0b2;
+  border-radius: 5px;
+  display: block;
+  text-align: center;
+  float: right;
+}
+
+.ad-text {
+  margin-bottom: 0.9375rem;
+}
+
+.button {
+  background-color: #ff9800;
+  padding: 0.625rem 1.25rem;
+  border-radius: 0.3125rem;
+  display: inline-block;
+  width: 6.25rem;
+  height: 2.5rem;
+  text-align: center;
+  line-height: 2.5rem;
+}
+
+.button a {
+  color: white;
+  text-decoration: none;
+}
