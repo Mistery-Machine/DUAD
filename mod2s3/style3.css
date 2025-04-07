@@ -1,0 +1,220 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f4f4f4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.container {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #ebebeb;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.header {
+  width: 60%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px 3px 20px;
+  background-color: #edebeb;
+  color: black;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 1.6rem;
+}
+
+.chart-table {
+  width: 60%;
+  border-collapse: collapse;
+  background-color: white;
+  align-items: center;
+  border: none;
+}
+
+.chart-table th {
+  padding: 10px;
+  border: none;
+  flex-direction: column;
+}
+.chart-table td {
+  text-align: center;
+  padding: 0%;
+  margin: 0%;
+  border-collapse: collapse;
+  border: none;
+}
+
+.chart-table thead {
+  background-color: #1d4ed8;
+  color: white;
+  border: none;
+  flex-direction: column;
+  height: 5%;
+}
+
+.chart-table td.award:nth-child(odd) {
+  background-color: #f9f9f9;
+}
+
+.chart-table td.award:nth-child(even) {
+  background-color: #eaeaea;
+}
+
+.chart-table td.peak-pos:nth-child(odd) {
+  background-color: #f9f9f9;
+}
+
+.chart-table td.peak-pos:nth-child(even) {
+  background-color: #eaeaea;
+}
+
+.chart-table th,
+.chart-table td {
+  border: none;
+}
+
+.date {
+  font-size: 0.9rem;
+  font-weight: normal;
+  display: flex;
+  align-items: end;
+}
+
+.nested-table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  height: 100%;
+  border: none;
+}
+
+.nested-cell-photo {
+  padding: 0;
+  margin: 0;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  border: none;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+  border: none;
+}
+
+.artist-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border: none;
+}
+
+.nested-cell-number {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  width: 100px;
+  height: auto;
+  color: #ddd;
+  background-color: black;
+  border: none;
+}
+
+.line {
+  flex-grow: 1;
+  height: 18px;
+  background-color: white;
+  margin: 5px;
+}
+
+.nested-cell-plus {
+  font-size: 2rem;
+  font-weight: bold;
+  color: gray;
+  text-align: center;
+  width: 6%;
+  height: 6%;
+}
+
+.this-week {
+  text-align: left;
+}
+
+.artist-name {
+  padding: 20px;
+  width: 28%;
+}
+.name-title {
+  font-weight: bold;
+}
+
+.arrow-container {
+  width: 60px;
+  height: 60px;
+  text-align: center;
+  display: table-cell;
+  vertical-align: middle;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle {
+  width: 30px;
+  height: 30px;
+  background-color: green;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.circle-down {
+  width: 30px;
+  height: 30px;
+  background-color: red;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.circle-right {
+  width: 30px;
+  height: 30px;
+  background-color: grey;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.arrow {
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.spacing {
+  padding-right: 60px;
+  padding-left: 10px;
+  margin: 5px;
+}
+.small-col {
+  width: 10%;
+}
+
+.peak-pos {
+  width: 8%;
+}
+.award {
+  width: 5%;
+}
