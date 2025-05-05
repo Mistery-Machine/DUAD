@@ -1,0 +1,30 @@
+.navbar-contain {
+  display: flex;
+  justify-content: space-between;
+  background-color: #f8fafb;
+  padding: 0 2rem;
+  align-items: center;
+  width: 1155px;
+  margin-bottom: 1.5rem;
+  margin-left: 1.5rem;
+}
+.nav-left {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+.nav-left a {
+  text-decoration: none;
+  color: #5f6a6a;
+  pointer-events: painted;
+}
+.brand-image {
+  width: 5rem;
+}
+
+.nav-right input {
+  padding: 0.4rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  width: 10rem;
+}

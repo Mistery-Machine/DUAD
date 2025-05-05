@@ -1,0 +1,32 @@
+.footer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 2rem 0;
+}
+
+.form-container {
+  width: 1155px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #feeaea;
+}
+.form-container form {
+  flex-direction: column;
+  width: 100%;
+  max-width: 400px;
+
+  background-color: #feeaea;
+}
+
+.confirm-button {
+  background-color: #ff257b;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  padding: 1rem 1rem;
+  height: 10%;
+  margin-bottom: 2rem;
+}
