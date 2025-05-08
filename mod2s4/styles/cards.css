@@ -37,12 +37,11 @@
   background-color: black;
   color: white;
   text-decoration: none;
-  height: 1.8rem;
-  width: 25%;
   border-radius: 5px;
-  padding-top: 0.4rem;
-  padding-left: 0.3rem;
+  padding: 0.4rem 0.8rem;
   margin-bottom: 1rem;
+  text-align: center;
+  box-sizing: border-box;
 }
 
 .card-title {
