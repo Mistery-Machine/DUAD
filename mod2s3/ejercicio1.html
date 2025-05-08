@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Form</title>
+    <link rel="stylesheet" href="style1.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <form action="https://dummyjson.com/test" method="POST">
+        <h1>Contact us!</h1>
+        <p>Got something to say? Fire away!</p>
+
+        <label for="first_name"></label> <br />
+        <input
+          type="text"
+          id="first_name"
+          name="firstName"
+          required
+          placeholder="First name*"
+        /><br />
+
+        <label for="last_name"></label><br />
+        <input
+          type="text"
+          id="last_name"
+          name="lastName"
+          required
+          placeholder="Last name*"
+        /><br />
+
+        <label for="email"></label><br />
+        <input
+          type="email"
+          id="email"
+          name="email"
+          required
+          placeholder="Email*"
+        /><br />
+
+        <label for="type"></label><br />
+        <select name="type" id="type" required>
+          <br />
+          <option hidden>What's your message about?</option>
+          <br />
+          <option value="question">Question</option>
+          <br />
+          <option value="suggestion">Suggestion</option>
+          <br />
+        </select>
+
+        <label for="message"></label><br />
+        <textarea
+          id="message"
+          name="message"
+          required
+          placeholder="Fire away*"
+        ></textarea
+        ><br />
+
+        <input type="submit" value="Send my message" />
+      </form>
+    </div>
+  </body>
+</html>

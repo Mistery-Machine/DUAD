@@ -1,0 +1,24 @@
+@import url("navbar_style.css");
+@import url("banner.css");
+@import url("cards.css");
+@import url("form.css");
+
+* {
+  box-sizing: border-box;
+}
+html {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.main-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+}

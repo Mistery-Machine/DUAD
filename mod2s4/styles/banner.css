@@ -1,0 +1,31 @@
+.banner-contain {
+  background-color: #feeaea;
+  display: flex;
+  justify-content: space-between;
+  width: 1155px;
+  margin-bottom: 2rem;
+  margin-left: 1.5rem;
+  padding-left: 3rem;
+}
+.banner-text {
+  max-width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.banner-text a {
+  text-decoration: none;
+  color: white;
+  background-color: #ff257b;
+  height: 2.8rem;
+  padding: 1rem;
+  width: 40%;
+  border-radius: 5px;
+}
+
+.banner-image img {
+  width: 400px;
+  height: auto;
+  background-color: #feeaea;
+}
