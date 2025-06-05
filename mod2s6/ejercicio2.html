@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ejercicio 2</title>
+  </head>
+  <body>
+    <input type="text" id="text" placeholder="Enter Data" />
+    <button type="button" id="enterButton">Press</button>
+    <p id="output"></p>
+    <script>
+      const inputField = document.getElementById("text");
+      const selectButton = document.getElementById("enterButton");
+      let outputField = document.getElementById("output");
+
+      selectButton.addEventListener("click", function () {
+        let texto = inputField.value;
+        outputField.textContent = texto;
+        inputField.value = "";
+      });
+    </script>
+  </body>
+</html>

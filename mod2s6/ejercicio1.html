@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ejercicio 1</title>
+  </head>
+  <body>
+    <button type="button" id="btnAdd">Add</button>
+    <ol id="myList"></ol>
+    <button type="button" id="btnDelete">Delete</button>
+
+    <script>
+      const addButton = document.getElementById("btnAdd");
+      const deleteButton = document.getElementById("btnDelete");
+      const list = document.getElementById("myList");
+
+      const addItem = () => {
+        const item = document.createElement("li");
+        item.innerHTML = "New Item";
+        list.appendChild(item);
+      };
+
+      const deleteItem = () => {
+        if (list.lastChild) {
+          list.removeChild(list.lastChild);
+        }
+      };
+
+      addButton.addEventListener("click", addItem);
+      deleteButton.addEventListener("click", deleteItem);
+    </script>
+  </body>
+</html>
