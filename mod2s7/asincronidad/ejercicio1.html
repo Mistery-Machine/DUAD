@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Obtener Usuario</title>
+  </head>
+  <body>
+    <h1>Obtained user:</h1>
+    <div id="result-user"></div>
+
+    <script>
+      async function getUser() {
+        try {
+          const response = await fetch("https://reqres.in/api/users/2", {
+            headers: { "x-api-key": "reqres-free-v1" },
+          });
+
+          const data = await response.json();
+          const user = data.data;
+
+          document.getElementById("result-user").innerHTML = `
+            <p>ID: ${user.id}</p>
+            <p>Name: ${user.first_name} ${user.last_name}</p>
+            <p>Email: ${user.email}</p>
+            <img src="${user.avatar}" alt="Avatar"> `;
+        } catch (error) {
+          console.error("Error:", error);
+        }
+      }
+
+      getUser();
+    </script>
+  </body>
+</html>

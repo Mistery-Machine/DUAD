@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Pokemon list</h1>
+    <div id="result"></div>
+    <script>
+      const urls = [
+        "https://pokeapi.co/api/v2/pokemon/1",
+        "https://pokeapi.co/api/v2/pokemon/4",
+        "https://pokeapi.co/api/v2/pokemon/7",
+      ];
+
+      Promise.all(urls.map((url) => fetch(url).then((res) => res.json())))
+        .then((pokemones) => {
+          pokemones.forEach((poke) => {
+            document.getElementById(
+              "result"
+            ).innerHTML += `<p> ${poke.name}</p>`;
+          });
+        })
+        .catch((error) => {
+          document.getElementById(
+            "result"
+          ).innerHTML = `<p> Error: ${error.message}</p>`;
+        });
+    </script>
+  </body>
+</html>

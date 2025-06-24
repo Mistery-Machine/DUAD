@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Random phrase</h1>
+    <div id="result"></div>
+    <script>
+      const palabras = ["very", "dogs", "cute", "are"];
+      const promises = [
+        new Promise((resolve) => setTimeout(() => resolve(palabras[1]), 400)),
+        new Promise((resolve) => setTimeout(() => resolve(palabras[3]), 800)),
+        new Promise((resolve) => setTimeout(() => resolve(palabras[0]), 1200)),
+        new Promise((resolve) => setTimeout(() => resolve(palabras[2]), 200)),
+      ];
+
+      Promise.all(promises).then((result) => {
+        const frase = result.join(" ");
+        document.getElementById("result").innerHTML = `<p>${frase}</p>`;
+      });
+    </script>
+  </body>
+</html>
