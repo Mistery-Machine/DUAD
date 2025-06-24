@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Obtener Usuario</title>
+  </head>
+  <body>
+    <h1>Obtained user:</h1>
+    <div id="result-user"></div>
+
+    <script>
+      fetch("https://reqres.in/api/users/23", {
+        headers: {
+          "x-api-key": "reqres-free-v1",
+        },
+      })
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error(" User not found");
+          }
+          return response.json();
+        })
+        .then((data) => {
+          const user = data.data;
+          document.getElementById("result-user").innerHTML = `
+          <p>ID: ${user.id}</p>
+          <p>Name: ${user.first_name} ${user.last_name}</p>
+          <p>Email: ${user.email}</p>
+          <img src="${user.avatar}" alt="Avatar">`;
+        })
+        .catch((error) => {
+          document.getElementById("result-user").innerHTML = `
+          <p>${error.message}</p>`;
+          console.error("Error getting data:", error);
+        })
+        .finally(() => {
+          console.log(" Program ended");
+        });
+    </script>
+  </body>
+</html>
