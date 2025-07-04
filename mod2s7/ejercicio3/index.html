@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="sheet.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio3</title>
+  </head>
+  <body>
+    <button class="button" id="button">* change color *</button>
+    <br />
+    <br />
+    <div>
+      <p id="paragraph" class="paragraph">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore, saepe
+        dignissimos adipisci sapiente, aliquam eveniet obcaecati quas inventore
+        ipsa aliquid vero repellendus enim similique cumque voluptatum, mollitia
+        quasi magnam corrupti. Lorem ipsum dolor, sit amet consectetur
+        adipisicing elit. Corporis velit odio ipsa facere hic nostrum quidem
+        beatae porro odit! Eaque qui atque suscipit voluptatem iure magni eius
+        quidem ipsum corporis? Lorem, ipsum dolor sit amet consectetur
+        adipisicing elit. Aut ipsam repellendus corporis beatae alias,
+        aspernatur explicabo nisi mollitia eum libero fuga a. Nemo eveniet
+        dignissimos animi placeat hic nesciunt commodi.
+      </p>
+    </div>
+    <script>
+      const boton = document.getElementById("button");
+      const text = document.getElementById("paragraph");
+
+      const colors = ["Red", "Blue", "Green", "Yellow", "Cyan", "Pink"];
+
+      function randomColor() {
+        const index = Math.floor(Math.random() * colors.length);
+        return colors[index];
+      }
+
+      boton.addEventListener("click", function () {
+        const color = randomColor();
+        text.style.backgroundColor = color;
+      });
+    </script>
+  </body>
+</html>
