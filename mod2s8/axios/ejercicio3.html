@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Buscar Usuario</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <h1>Buscar Usuario</h1>
+    <form id="formBuscar">
+      <label
+        >ID del usuario: <input type="text" id="usuarioId" required
+      /></label>
+      <button type="submit">Buscar</button>
+    </form>
+
+    <div id="resultado"></div>
+
+    <script>
+      async function obtenerUsuarioPorId(id) {
+        try {
+          const respuesta = await axios.get(
+            `https://api.restful-api.dev/objects/${id}`
+          );
+          return respuesta.data;
+        } catch (error) {
+          if (error.response && error.response.status === 404) {
+            throw new Error("Usuario no encontrado");
+          }
+          throw new Error("Error al buscar usuario");
+        }
+      }
+
+      document
+        .getElementById("formBuscar")
+        .addEventListener("submit", async function (e) {
+          e.preventDefault();
+          const id = document.getElementById("usuarioId").value;
+
+          try {
+            const resultado = await obtenerUsuarioPorId(id);
+            document.getElementById("resultado").innerHTML = `
+            <strong>ID:</strong> ${resultado.id}<br>
+            <strong>Nombre:</strong> ${resultado.name}
+          `;
+          } catch (error) {
+            document.getElementById("resultado").innerText = error.message;
+          }
+        });
+    </script>
+  </body>
+</html>

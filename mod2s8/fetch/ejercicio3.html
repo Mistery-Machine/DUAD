@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Buscar Usuario</title>
+  </head>
+  <body>
+    <h1>Buscar Usuario</h1>
+    <form id="formBuscar">
+      <label
+        >ID del usuario: <input type="text" id="usuarioId" required
+      /></label>
+      <button type="submit">Buscar</button>
+    </form>
+
+    <div id="resultado"></div>
+
+    <script>
+      function obtenerUsuarioPorId(id) {
+        return fetch("https://api.restful-api.dev/objects/" + id)
+          .then((respuesta) => {
+            if (!respuesta.ok) {
+              if (respuesta.status === 404) {
+                throw new Error("Usuario no encontrado");
+              }
+              throw new Error("Error al buscar usuario");
+            }
+            return respuesta.json();
+          })
+          .catch((error) => ({ error: error.message }));
+      }
+
+      document
+        .getElementById("formBuscar")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          const id = document.getElementById("usuarioId").value;
+
+          obtenerUsuarioPorId(id).then((resultado) => {
+            if (resultado.error) {
+              document.getElementById("resultado").innerText = resultado.error;
+            } else {
+              document.getElementById("resultado").innerHTML = `
+              <strong>ID:</strong> ${resultado.id}<br>
+              <strong>Nombre:</strong> ${resultado.name}
+            `;
+            }
+          });
+        });
+    </script>
+  </body>
+</html>

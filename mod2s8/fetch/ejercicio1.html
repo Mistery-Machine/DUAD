@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio1</title>
+  </head>
+  <body>
+    <h1>Objeto con Datos</h1>
+    <button id="cargar">Cargar Objetos</button>
+    <div id="resultados"></div>
+    <script>
+      document
+        .getElementById("cargar")
+        .addEventListener("click", listarObjetosData);
+
+      async function listarObjetosData() {
+        try {
+          const respuesta = await fetch("https://api.restful-api.dev/objects");
+          if (!respuesta.ok) {
+            throw new Error("Error al cargar los datos");
+          }
+
+          const objetos = await respuesta.json();
+          const objetoData = objetos.filter((obj) => obj.data);
+          const contenedor = document.getElementById("resultados");
+          contenedor.innerHTML = "";
+
+          objetoData.forEach((obj) => {
+            if (obj.data) {
+              const propiedades = Object.entries(obj.data)
+                .map(([clave, valor]) => `${clave}: ${valor}`)
+                .join(", ");
+
+              const parrafo = document.createElement("p");
+              parrafo.textContent = `${obj.name} (${propiedades})`;
+              contenedor.appendChild(parrafo);
+            }
+          });
+        } catch (error) {
+          console.error("Error:", error);
+          document.getElementById("resultados").textContent =
+            "Error al cargar los datos. Por favor, inténtalo de nuevo.";
+        }
+      }
+    </script>
+  </body>
+</html>

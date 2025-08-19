@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Usuarios API</title>
+  </head>
+  <body>
+    <h1>Gestión de Usuarios</h1>
+
+    <h2>Crear Usuario</h2>
+    <form id="formCrear">
+      <label>Nombre: <input type="text" id="nombre" required /></label
+      ><br /><br />
+      <label>Correo: <input type="email" id="correo" required /></label
+      ><br /><br />
+      <label>Dirección: <input type="text" id="direccion" required /></label
+      ><br /><br />
+      <label
+        >Contraseña: <input type="password" id="contrasena" required /></label
+      ><br /><br />
+      <button type="submit">Crear Usuario</button>
+    </form>
+    <div id="resultadoCrear"></div>
+
+    <hr />
+
+    <h2>Actualizar Dirección</h2>
+    <form id="formActualizar">
+      <label
+        >ID del usuario: <input type="text" id="usuarioId" required /></label
+      ><br /><br />
+      <label
+        >Nueva dirección:
+        <input type="text" id="nuevaDireccion" required /></label
+      ><br /><br />
+      <button type="submit">Actualizar Dirección</button>
+    </form>
+    <div id="resultadoActualizar"></div>
+
+    <script>
+      // Crear Usuario
+      function crearUsuario(nombre, correo, direccion, contrasena) {
+        return fetch("https://api.restful-api.dev/objects", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            name: nombre,
+            data: {
+              correo: correo,
+              direccion: direccion,
+              contraseña: contrasena,
+            },
+          }),
+        })
+          .then((res) => {
+            if (!res.ok) throw new Error("Error al crear usuario");
+            return res.json();
+          })
+          .catch((error) => ({ error: error.message }));
+      }
+
+      document
+        .getElementById("formCrear")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          const nombre = document.getElementById("nombre").value;
+          const correo = document.getElementById("correo").value;
+          const direccion = document.getElementById("direccion").value;
+          const contrasena = document.getElementById("contrasena").value;
+
+          crearUsuario(nombre, correo, direccion, contrasena).then(
+            (resultado) => {
+              if (resultado.error) {
+                document.getElementById("resultadoCrear").innerText =
+                  resultado.error;
+              } else {
+                document.getElementById("resultadoCrear").innerHTML = `
+              ✅ Usuario creado con éxito<br>
+              <strong>ID:</strong> ${resultado.id}<br>
+              <strong>Nombre:</strong> ${resultado.name}<br>
+              <strong>Correo:</strong> ${resultado.data.correo}<br>
+              <strong>Dirección:</strong> ${resultado.data.direccion}<br>
+              <strong>Contraseña:</strong> ${resultado.data.contraseña}
+            `;
+              }
+            }
+          );
+        });
+
+      //  Actualizar Dirección
+      function actualizarDireccionUsuario(id, nuevaDireccion) {
+        return fetch("https://api.restful-api.dev/objects/" + id, {
+          method: "PUT",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            data: { direccion: nuevaDireccion },
+          }),
+        })
+          .then((res) => {
+            if (!res.ok) throw new Error("Error al actualizar usuario");
+            return res.json();
+          })
+          .catch((error) => ({ error: error.message }));
+      }
+
+      document
+        .getElementById("formActualizar")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          const id = document.getElementById("usuarioId").value;
+          const nuevaDireccion =
+            document.getElementById("nuevaDireccion").value;
+
+          actualizarDireccionUsuario(id, nuevaDireccion).then((resultado) => {
+            if (resultado.error) {
+              document.getElementById("resultadoActualizar").innerText =
+                resultado.error;
+            } else {
+              document.getElementById("resultadoActualizar").innerHTML = `
+              ✅ Dirección actualizada<br>
+              <strong>ID:</strong> ${resultado.id}<br>
+              <strong>Nombre:</strong> ${resultado.name}<br>
+              <strong>Nueva Dirección:</strong> ${resultado.data.direccion}
+            `;
+            }
+          });
+        });
+    </script>
+  </body>
+</html>

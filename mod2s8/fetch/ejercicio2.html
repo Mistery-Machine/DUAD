@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 2</title>
+  </head>
+  <body>
+    <h1>Registro de Usuario</h1>
+
+    <form id="formulario">
+      <label>Nombre: <input type="text" id="nombre" required /></label>
+      <br /><br />
+      <label>Correo: <input type="text" id="correo" required /></label
+      ><br /><br />
+      <label>Contrasena: <input type="text" id="contrasena" required /></label
+      ><br /><br />
+      <label>Direccion: <input type="text" id="direccion" required /></label
+      ><br /><br />
+      <button type="submit">Registrarse</button>
+    </form>
+
+    <p id="mensaje"></p>
+
+    <script>
+      document
+        .getElementById("formulario")
+        .addEventListener("submit", async (e) => {
+          e.preventDefault();
+
+          const usuario = {
+            nombre: document.getElementById("nombre").value,
+            correo: document.getElementById("correo").value,
+            contrasena: document.getElementById("contrasena").value,
+            direccion: document.getElementById("direccion").value,
+          };
+
+          try {
+            const respuesta = await fetch(
+              "https://api.restful-api.dev/objects",
+              {
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                  name: usuario.nombre,
+                  data: {
+                    email: usuario.correo,
+                    password: usuario.contrasena,
+                    address: usuario.direccion,
+                  },
+                }),
+              }
+            );
+
+            const datos = await respuesta.json();
+            console.log("Respuesta del servidor:", datos);
+
+            if (datos.id) {
+              document.getElementById("mensaje").innerHTML = `
+            ID: ${datos.id}<br>
+            Nombre: ${datos.name}`;
+            } else {
+              throw new Error("El servidor no devolvió un ID");
+            }
+          } catch (error) {
+            document.getElementById("mensaje").innerHTML = `${error.message}`;
+          }
+        });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 2 con Axios</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <h1>Registro de Usuario</h1>
+
+    <form id="formulario">
+      <label>Nombre: <input type="text" id="nombre" required /></label>
+      <br /><br />
+      <label>Correo: <input type="email" id="correo" required /></label
+      ><br /><br />
+      <label
+        >Contraseña: <input type="password" id="contrasena" required /></label
+      ><br /><br />
+      <label>Dirección: <input type="text" id="direccion" required /></label
+      ><br /><br />
+      <button type="submit">Registrarse</button>
+    </form>
+
+    <p id="mensaje"></p>
+
+    <script>
+      document
+        .getElementById("formulario")
+        .addEventListener("submit", async (e) => {
+          e.preventDefault();
+
+          const usuario = {
+            nombre: document.getElementById("nombre").value,
+            correo: document.getElementById("correo").value,
+            contrasena: document.getElementById("contrasena").value,
+            direccion: document.getElementById("direccion").value,
+          };
+
+          try {
+            const respuesta = await axios.post(
+              "https://api.restful-api.dev/objects",
+              {
+                name: usuario.nombre,
+                data: {
+                  email: usuario.correo,
+                  password: usuario.contrasena,
+                  address: usuario.direccion,
+                },
+              },
+              {
+                headers: {
+                  "Content-Type": "application/json",
+                },
+              }
+            );
+
+            console.log("Respuesta del servidor:", respuesta.data);
+
+            if (respuesta.data.id) {
+              document.getElementById("mensaje").innerHTML = `
+              ID: ${respuesta.data.id}<br>
+              Nombre: ${respuesta.data.name}<br>
+              Email: ${respuesta.data.data.email}<br>
+              Dirección: ${respuesta.data.data.address}`;
+            } else {
+              throw new Error("El servidor no devolvió un ID");
+            }
+          } catch (error) {
+            console.error("Error:", error);
+            document.getElementById("mensaje").innerHTML =
+              error.response?.data?.message || error.message;
+          }
+        });
+    </script>
+  </body>
+</html>
