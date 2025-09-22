@@ -1,0 +1,193 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.9;
+  background: #f9f9f9;
+  color: #222;
+  padding: 40px;
+  
+}
+
+.social-links{
+  display: flex;          
+  flex-direction: row;    
+  gap: 20px;       
+  /*margin-top: 20px;*/
+  margin-right: 445px;
+  justify-content: flex-start;
+}
+
+.about-paragraph{
+  display: flex;
+  justify-content: flex-start;
+}
+.about-me{
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 551px;
+  font-size: 2.6rem
+}
+
+.photo{
+  height: 350px;
+  width: 350px;       
+  object-fit: cover;   
+  margin-left: 200px;
+  display: block;
+}
+
+h1 {
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+  color: #444; 
+  font-weight: bold;
+}
+
+
+p {
+  max-width: 700px;
+  margin-bottom: 30px;
+  font-size: 1rem;
+  color: #444;
+  
+}
+
+
+a {
+  display: inline-block;
+  margin-bottom: 10px;
+  text-decoration: none;
+  color: #e14f2a;
+  font-weight: 500;
+  
+}
+
+a:hover {
+  color: #b3391d;
+  text-decoration: underline;
+}
+.center-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.signInPage,
+.signUpPage {
+  background: #fff;
+  padding: 40px 30px;
+  border-radius: 12px;
+  justify-content: center;
+  box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 320px;
+}
+
+
+.signInPage h1,
+.signUpPage h1{
+  margin-bottom: 10px;
+  color: #e14f2a;
+}
+
+.signInPage h5,
+.signUpPage h5 {
+  margin-bottom: 20px;
+  font-weight: 400;
+  color: #666;
+}
+
+
+.signInPage input,
+.signUpPage input {
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+  
+}
+
+.signInPage input:focus,
+.signUpPage input focus {
+  border-color: #e14f2a;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(225, 79, 42, 0.2);
+}
+
+
+#signIn,
+#signUp {
+  width: 100%;
+  padding: 12px;
+  background: #e14f2a;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  
+}
+
+#signIn:hover,
+#signUp:hover {
+  background: #b3391d;
+}
+
+.navbar {
+  background: #f9f9f9;
+  border-radius: 12px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
+  margin-bottom: 40px;
+ /* background-color: #b3391d;*/
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #e14f2a;
+  font-weight: 600;
+  padding: 8px 14px;
+  border-radius: 8px;
+  
+}
+
+.navbar a:hover {
+  background: #e14f2a;
+  color: #fff;
+}
+
+/* ---- prueba de about us*/
+
+
+.main-container{
+  display: flex;
+  justify-content: space-between;
+  /*background-color: blue;*/
+  padding-left: 20px;
+}
+
+
+.first-container{
+  /*background-color: chocolate;*/
+  padding-left: 0px;
+  margin-left:0px ;
+}
+.second-container{
+  margin-right: 20px;
+  padding-right: 40px;
+ /* background-color: aqua;*/
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+}
