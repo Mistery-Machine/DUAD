@@ -22,6 +22,7 @@ signUpForm.addEventListener("submit", function (event) {
     username,
     email,
     password,
+    objId: null,
   };
 
   usuarios.push(nuevoUsuario);

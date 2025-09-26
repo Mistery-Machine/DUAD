@@ -42,9 +42,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
   async function cargarTareas() {
     try {
-      const resp = await axios.get(`${API_URL}?id=${usuarioActivo.id}`);
-      if (resp.data && resp.data[0] && resp.data[0].data) {
-        tareas = resp.data[0].data.tareas || [];
+      if (!usuarioActivo.objId) {
+        tareas = [];
+        renderTareas();
+        return;
+      }
+
+      const resp = await axios.get(`${API_URL}/${usuarioActivo.objId}`);
+      if (resp.data && resp.data.data) {
+        tareas = resp.data.data.tareas || [];
       } else {
         tareas = [];
       }
@@ -64,7 +70,13 @@ document.addEventListener("DOMContentLoaded", function () {
       if (!usuarioActivo.objId) {
         const resp = await axios.post(API_URL, body);
         usuarioActivo.objId = resp.data.id;
+
         localStorage.setItem("usuarioActivo", JSON.stringify(usuarioActivo));
+        let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+        usuarios = usuarios.map((u) =>
+          u.id === usuarioActivo.id ? usuarioActivo : u
+        );
+        localStorage.setItem("usuarios", JSON.stringify(usuarios));
       } else {
         await axios.put(`${API_URL}/${usuarioActivo.objId}`, body);
       }
