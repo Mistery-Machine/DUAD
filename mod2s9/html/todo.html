@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>To-Do List</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <aside class="sidebar">
+    <header class="sidebar__header">
+      <div class="avatar"></div>
+      <span class="username">User</span>
+      <div class="spacer"></div>
+    </header>
+
+    <nav class="nav">
+      <h3 class="nav__title">Menú</h3>
+      <ul class="nav__list">
+        <li class="nav__item active" id="showFormBtn">✢ Añadir tarea</li>
+        <li class="miniTitle">⥯ Filtros y Etiquetas</li>
+      </ul>
+  <div class="filters">
+    <button id="filtroTodas">☴ Todas</button>
+    <button id="filtroCompletas">≅ Completas</button>
+    <button id="filtroIncompletas">≆ Incompletas</button>
+  </div>
+    </nav>
+
+    <div class="logout-button">
+      <button class="logout-btn">⋘ Log out</button>
+    </div>
+  </aside>
+
+  <main class="main">
+    <h1 class="page-title">Hoy</h1>
+
+    <section class="section">
+      <h2 class="section__title">Mis Proyectos</h2>
+
+      <div id="formContainer" class="form-container hidden">
+        <form id="taskForm" class="task-form">
+          <input type="text" id="taskInput" placeholder="Escribe una nueva tarea..." required />
+          <div class="form-actions">
+            <button type="submit">Añadir</button>
+            <button type="button" id="cancelBtn" class="cancelBtn">Cancelar</button>
+          </div>
+        </form>
+      </div>
+
+      <ul id="taskList" class="task-list"></ul>
+    </section>
+  </main>
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="todo.js"></script>
+<script src="session.js"></script>
+
+</body>
+</html>
