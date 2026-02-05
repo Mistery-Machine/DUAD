@@ -1,0 +1,41 @@
+/*Todos los libros y sus autores*/
+
+SELECT 
+    Books.Name AS Book,
+    Authors.Name AS Author
+FROM Books
+LEFT JOIN Authors ON Books.Author = Authors.ID;
+
+/*Libros sin autor*/
+SELECT Name
+FROM Books
+WHERE Author IS NULL;
+
+/*Autores sin libros*/
+SELECT Authors.Name
+FROM Authors
+LEFT JOIN Books ON Authors.ID = Books.Author
+WHERE Books.ID IS NULL;
+
+/*Libros que han sido rentados*/
+SELECT DISTINCT Books.Name
+FROM Books
+INNER JOIN Rents ON Books.ID = Rents.BookID;
+
+/*Libros que nunca han sido rentados*/
+SELECT Books.Name
+FROM Books
+LEFT JOIN Rents ON Books.ID = Rents.BookID
+WHERE Rents.ID IS NULL;
+
+/*Clientes que nunca han rentado libros*/
+SELECT Customers.Name
+FROM Customers
+LEFT JOIN Rents ON Customers.ID = Rents.CustomerID
+WHERE Rents.ID IS NULL;
+
+/*Libros rentados con estado Overdue*/
+SELECT DISTINCT Books.Name
+FROM Books
+INNER JOIN Rents ON Books.ID = Rents.BookID
+WHERE Rents.State = 'Overdue';
